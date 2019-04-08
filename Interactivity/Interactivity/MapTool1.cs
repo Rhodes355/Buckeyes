@@ -16,11 +16,12 @@ using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
-namespace project_template
+namespace Interactivity
 {
     internal class MapTool1 : MapTool
     {
-        private Dockpane1ViewModel pane = FrameworkApplication.DockPaneManager.Find("project_template_Dockpane1") as Dockpane1ViewModel;
+        private Dockpane1ViewModel pane = FrameworkApplication.DockPaneManager.Find("Interactivity_Dockpane1") as Dockpane1ViewModel;
+
         public MapTool1()
         {
             IsSketchTool = true;
@@ -74,8 +75,20 @@ namespace project_template
             });
             t.Wait();
 
-            //pane.PositionLabel = string.Format("{0} {1}", map_point.X, map_point.Y);
+            pane.PositionLabel = string.Format("{0:0.###} {1:0.###}", map_point.X, map_point.Y);
             bIsMouseMoveActive = false;
+        }
+
+        protected override void OnToolMouseDown(MapViewMouseButtonEventArgs e)
+        {
+            MapPoint map_point = null;
+            Task t = QueuedTask.Run(() =>
+            {
+                map_point = MapView.Active.ClientToMap(e.ClientPoint);
+            });
+            t.Wait();
+
+            pane.PositionLabel = string.Format("Clicked @ ({0:0.###}, {1:0.###})!", map_point.X, map_point.Y);
         }
     }
 }

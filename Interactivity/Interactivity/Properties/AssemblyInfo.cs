@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("project_template")]
+[assembly: AssemblyTitle("Interactivity")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Acme")]
-[assembly: AssemblyProduct("project_template")]
+[assembly: AssemblyProduct("Interactivity")]
 [assembly: AssemblyCopyright("Copyright © Acme 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("eea4fb62-3533-4193-94ea-99f87e758c7a")]
+[assembly: Guid("638040b0-1e0a-41ed-b2e8-eada23f3bbfc")]
 
 // Version information for an assembly consists of the following four values:
 //

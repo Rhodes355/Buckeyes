@@ -17,11 +17,11 @@ using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
 
-namespace project_template
+namespace Interactivity
 {
     internal class Dockpane1ViewModel : DockPane
     {
-        private const string _dockPaneID = "project_template_Dockpane1";
+        private const string _dockPaneID = "Interactivity_Dockpane1";
 
         protected Dockpane1ViewModel() { }
 
@@ -40,30 +40,29 @@ namespace project_template
         /// <summary>
         /// Text shown near the top of the DockPane.
         /// </summary>
-        private string _heading = "Property Finder";
-        public string Heading
-        {
+        private string _heading = "My DockPane";
+        public string Heading {
             get { return _heading; }
-            set
-            {
+            set {
                 SetProperty(ref _heading, value, () => Heading);
             }
-
-
         }
 
-
+        private string _PositionLabel;
+        public string PositionLabel {
+            get { return _PositionLabel; }
+            set {
+                SetProperty(ref _PositionLabel, value, () => PositionLabel);
+            }
+        }
 
         private string _SelectedFeaturesText;
-        public string SelectedFeaturesText
-        {
+        public string SelectedFeaturesText {
             get { return _SelectedFeaturesText; }
-            set
-            {
+            set {
                 SetProperty(ref _SelectedFeaturesText, value, () => SelectedFeaturesText);
             }
         }
-
     }
 
     /// <summary>

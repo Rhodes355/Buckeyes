@@ -1,0 +1,46 @@
+﻿<ArcGIS defaultAssembly="Interactivity.dll" defaultNamespace="Interactivity" xmlns="http://schemas.esri.com/DADF/Registry" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.esri.com/DADF/Registry file:///C:/Program%20Files/ArcGIS/Pro/bin/ArcGIS.Desktop.Framework.xsd">
+  <AddInInfo id="{638040b0-1e0a-41ed-b2e8-eada23f3bbfc}" version="1.0" desktopVersion="2.3.15769">
+    <Name>Interactivity</Name>
+    <Description>Interactivity description</Description>
+    <Image>Images\AddinDesktop32.png</Image>
+    <Author>Flyawayautumn</Author>
+    <Company>Acme</Company>
+    <Date>4/5/2019 8:29:26 PM, 2019</Date>
+    <Subject>Framework</Subject>
+    <!-- Note subject can be one or more of these topics:
+                    Content, Framework, Editing, Geodatabase, Geometry, Geoprocessing, Layouts, Map Authoring, Map Exploration -->
+  </AddInInfo>
+  <modules>
+    <insertModule id="Interactivity_Module" className="Module1" autoLoad="false" caption="Module1">
+      <!-- uncomment to have the control hosted on a separate tab-->
+      <tabs>
+        <tab id="MyTools2" caption="My Tools 2!">
+          <group refID="Interactivity_Group1"/>
+        </tab>
+      </tabs>
+      <groups>
+        <!-- comment this out if you have no controls on the Addin tab to avoid
+              an empty group-->
+        <group id="Interactivity_Group1" caption="Show Dockpane" appearsOnAddInTab="true">
+          <!-- host controls within groups -->
+          <tool refID="Interactivity_MapTool1" size="large" />
+          <button refID="Interactivity_Dockpane1_ShowButton" size="large" />
+        </group>
+      </groups>
+      <controls>
+        <!-- add your controls here -->
+        <tool id="Interactivity_MapTool1" caption="Map Tool" className="MapTool1" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonRed32.png" condition="esri_mapping_mapPane">
+          <tooltip heading="Tooltip Heading">Tooltip text<disabledText /></tooltip>
+        </tool>
+        <button id="Interactivity_Dockpane1_ShowButton" caption="Show Dockpane" className="Dockpane1_ShowButton" loadOnClick="true" smallImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple16.png" largeImage="pack://application:,,,/ArcGIS.Desktop.Resources;component/Images/GenericButtonPurple32.png">
+          <tooltip heading="Show Dockpane">Show Dockpane<disabledText /></tooltip>
+        </button>
+      </controls>
+      <dockPanes>
+        <dockPane id="Interactivity_Dockpane1" caption="Interactivity" className="Dockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+          <content className="Dockpane1View" />
+        </dockPane>
+      </dockPanes>
+    </insertModule>
+  </modules>
+</ArcGIS>

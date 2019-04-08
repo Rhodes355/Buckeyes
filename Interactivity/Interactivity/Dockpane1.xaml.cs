@@ -11,14 +11,14 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Shapes;
 using ArcGIS.Core.Data;
 using ArcGIS.Desktop.Editing;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
-using System.Windows.Shapes;
 
 
-namespace project_template
+namespace Interactivity
 {
     /// <summary>
     /// Interaction logic for Dockpane1View.xaml
@@ -28,6 +28,7 @@ namespace project_template
         public Dockpane1View()
         {
             InitializeComponent();
+
             var mv = MapView.Active;
             if (mv == null)
                 return;
@@ -40,12 +41,7 @@ namespace project_template
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void BtnRefresh_Click(object sender, RoutedEventArgs e)
+        private void button_Click(object sender, RoutedEventArgs e)
         {
             cboLayerList.Items.Clear();
             var mv = MapView.Active;
@@ -58,10 +54,9 @@ namespace project_template
                 cboLayerList.Items.Add(l.Name);
                 cboLayerList.SelectedIndex = 0;
             }
-
         }
 
-        private async void CboLayerList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void cboLayerList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string lname = cboLayerList.SelectedItem.ToString();
             var mv = MapView.Active;
@@ -74,23 +69,22 @@ namespace project_template
                 return fcdef.GetFields();
             });
 
-            LstFields.Items.Clear();
+            lstFields.Items.Clear();
             for (int i = 0; i < fields.Count; i++)
             {
                 Field fld = fields[i];
                 if (fld.FieldType == FieldType.String)
-                    LstFields.Items.Add(fld.Name);
+                    lstFields.Items.Add(fld.Name);
             }
-            LstFields.SelectAll();
-
+            lstFields.SelectAll();
         }
 
-        private async void BtnSearch_Click(object sender, RoutedEventArgs e)
+        private async void btnFind_Click(object sender, RoutedEventArgs e)
         {
             string text = txtQuery.Text;
             if (text == "")
                 return;
-            if (LstFields.SelectedItems.Count == 0)
+            if (lstFields.SelectedItems.Count == 0)
                 return;
 
             // get feature class first
@@ -98,12 +92,12 @@ namespace project_template
             string lname = cboLayerList.SelectedItem.ToString();
             FeatureLayer fl = mv.Map.FindLayers(lname).FirstOrDefault() as FeatureLayer;
 
-            var fields = LstFields.SelectedItems;
+            var fields = lstFields.SelectedItems;
             string query = "";
-            for (int i = 0; i < LstFields.SelectedItems.Count; i++)
+            for (int i = 0; i < lstFields.SelectedItems.Count; i++)
             {
-                query += string.Format("{0} LIKE '{1}'", LstFields.SelectedItems[i].ToString(), text);
-                if (i != LstFields.SelectedItems.Count - 1)
+                query += string.Format("{0} LIKE '{1}'", lstFields.SelectedItems[i].ToString(), text);
+                if (i != lstFields.SelectedItems.Count - 1)
                     query += " OR ";
             }
 
@@ -125,12 +119,6 @@ namespace project_template
                 }
                 // MessageBox.Show(c.ToString());
             });
-
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

@@ -17,7 +17,7 @@ using ArcGIS.Desktop.Framework.Dialogs;
 using ArcGIS.Desktop.Framework.Threading.Tasks;
 using ArcGIS.Desktop.Mapping;
 
-namespace project_template
+namespace Interactivity
 {
     internal class Module1 : Module
     {
@@ -26,11 +26,9 @@ namespace project_template
         /// <summary>
         /// Retrieve the singleton instance to this module here
         /// </summary>
-        public static Module1 Current
-        {
-            get
-            {
-                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("project_template_Module"));
+        public static Module1 Current {
+            get {
+                return _this ?? (_this = (Module1)FrameworkApplication.FindModule("Interactivity_Module"));
             }
         }
 
