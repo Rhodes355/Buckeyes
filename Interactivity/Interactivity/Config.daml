@@ -14,14 +14,14 @@
     <insertModule id="Interactivity_Module" className="Module1" autoLoad="false" caption="Module1">
       <!-- uncomment to have the control hosted on a separate tab-->
       <tabs>
-        <tab id="MyTools2" caption="My Tools 2!">
+        <tab id="MyTools2" caption="Buckeyes">
           <group refID="Interactivity_Group1"/>
         </tab>
       </tabs>
       <groups>
         <!-- comment this out if you have no controls on the Addin tab to avoid
               an empty group-->
-        <group id="Interactivity_Group1" caption="Show Dockpane" appearsOnAddInTab="true">
+        <group id="Interactivity_Group1" caption="Search Tools" appearsOnAddInTab="true">
           <!-- host controls within groups -->
           <tool refID="Interactivity_MapTool1" size="large" />
           <button refID="Interactivity_Dockpane1_ShowButton" size="large" />
@@ -37,7 +37,7 @@
         </button>
       </controls>
       <dockPanes>
-        <dockPane id="Interactivity_Dockpane1" caption="Interactivity" className="Dockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane">
+        <dockPane id="Interactivity_Dockpane1" caption="Real Estate Search" className="Dockpane1ViewModel" dock="group" dockWith="esri_core_contentsDockPane">
           <content className="Dockpane1View" />
         </dockPane>
       </dockPanes>

@@ -35,16 +35,11 @@
                 </TextBlock.ToolTip>
       </TextBlock>
         </DockPanel>
-        <Label x:Name="label" Content="Position" HorizontalAlignment="Left" Margin="19,21,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" Width="52" Grid.Column="1"/>
-        <Label x:Name="label1" Content="Selections" HorizontalAlignment="Left" Margin="19,46,0,0" Grid.Row="1" VerticalAlignment="Top" Height="26" Width="60" Grid.Column="1"/>
         <Label x:Name="label2" Content="" HorizontalAlignment="Left" Margin="76,21,0,0" Grid.Row="1" VerticalAlignment="Top" Height="0" Width="0" Grid.Column="1"/>
-        <Label x:Name="lblPosition" Content="{Binding PositionLabel}" Margin="76,21,0,0" Grid.Row="1" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left" Width="217" Grid.Column="1"/>
-        <TextBlock x:Name="txtSelectedFeatures"
-                   Text="{Binding SelectedFeaturesText}" Margin="19,72,0,0" Grid.Row="1" VerticalAlignment="Top" Height="107" HorizontalAlignment="Left" Width="255" Grid.Column="1"/>
-        <ComboBox x:Name="cboLayerList" Margin="19,265,0,0" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="cboLayerList_SelectionChanged" HorizontalAlignment="Left" Width="180" Grid.Column="1"/>
-        <Button x:Name="btnRefresh" Content="Refresh" Margin="218,265,0,0" Grid.Row="1" VerticalAlignment="Top" Click="button_Click" Height="23" HorizontalAlignment="Left" Width="75" Grid.Column="1"/>
-        <ListBox x:Name="lstFields" Height="127" Margin="19,292,0,0" Grid.Row="1" VerticalAlignment="Top" SelectionMode="Multiple" HorizontalAlignment="Left" Width="180" Grid.Column="1"/>
-        <TextBox x:Name="txtQuery" Height="23" Margin="19,424,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="180" Grid.Column="1"/>
-        <Button x:Name="btnFind" Content="Find" Margin="218,424,0,0" Grid.Row="1" VerticalAlignment="Top" Click="btnFind_Click" Height="23" HorizontalAlignment="Left" Width="75" Grid.Column="1"/>
+        <ComboBox x:Name="cboLayerList" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="cboLayerList_SelectionChanged" HorizontalAlignment="Left" Width="206" Grid.Column="1"/>
+        <Button x:Name="btnRefresh" Content="Refresh" Margin="240,10,0,0" Grid.Row="1" VerticalAlignment="Top" Click="button_Click" Height="23" HorizontalAlignment="Left" Width="75" Grid.Column="1"/>
+        <ListBox x:Name="lstFields" Height="354" Margin="10,51,0,0" Grid.Row="1" VerticalAlignment="Top" SelectionMode="Multiple" HorizontalAlignment="Left" Width="206" Grid.Column="1"/>
+        <TextBox x:Name="txtQuery" Height="23" Margin="10,424,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="206" Grid.Column="1"/>
+        <Button x:Name="btnFind" Content="Find" Margin="240,424,0,0" Grid.Row="1" VerticalAlignment="Top" Click="btnFind_Click" Height="23" HorizontalAlignment="Left" Width="75" Grid.Column="1"/>
     </Grid>
 </UserControl>
